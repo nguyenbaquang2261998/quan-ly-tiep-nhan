@@ -249,7 +249,7 @@ function StudentPortal() {
       formDataToSubmit.append('aiExtractedDob', aiResult.extracted_dob || '');
       formDataToSubmit.append('camKet', String(formData.camKet));
 
-      const response = await fetch('http://localhost:5000/api/students', {
+      const response = await fetch('/api/students', {
         method: 'POST',
         body: formDataToSubmit
       });
@@ -782,7 +782,7 @@ function AdminDashboard({ onPrint }) {
   useEffect(() => {
     const fetchStudents = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/students?page=${currentPage}&limit=${studentsPerPage}`);
+        const response = await fetch(`/api/students?page=${currentPage}&limit=${studentsPerPage}`);
         if (response.ok) {
           const data = await response.json();
           setStudents(data.students || []);
@@ -815,13 +815,13 @@ function AdminDashboard({ onPrint }) {
   useEffect(() => {
     const interval = setInterval(async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/students/latest');
+        const response = await fetch('/api/students/latest');
         if (response.ok) {
           const data = await response.json();
           const currentFirstStudent = students[0];
           const newFirstStudent = data.student;
           if (currentFirstStudent && newFirstStudent && currentFirstStudent._id !== newFirstStudent._id) {
-            const fullResponse = await fetch(`http://localhost:5000/api/students?page=${currentPage}&limit=${studentsPerPage}`);
+            const fullResponse = await fetch(`/api/students?page=${currentPage}&limit=${studentsPerPage}`);
             if (fullResponse.ok) {
               const fullData = await fullResponse.json();
               setStudents(fullData.students);
