@@ -1,0 +1,32 @@
+[
+    {
+        "id": "01",
+        "name": "Học viện Chính trị",
+        "active": true
+    },
+    {
+        "id": "02",
+        "name": "Quân khu 3",
+        "active": true
+    },
+    {
+        "id": "03",
+        "name": "Quân khu 4",
+        "active": true
+    },
+    {
+        "id": "04",
+        "name": "Quân khu 5",
+        "active": true
+    },
+    {
+        "id": "05",
+        "name": "Quân khu 7",
+        "active": true
+    },
+    {
+        "id": "06",
+        "name": "Quân khu 9",
+        "active": true
+    }
+]
