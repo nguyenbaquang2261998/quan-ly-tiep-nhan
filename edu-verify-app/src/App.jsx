@@ -797,7 +797,7 @@ function AdminDashboard({ onPrint }) {
 
     const testConnection = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/test');
+        const response = await fetch('/api/test');
         if (response.ok) {
           fetchStudents();
         } else {
@@ -1184,7 +1184,7 @@ function PrintPreview({ student, onBack }) {
         </div>
         <div className="p-4 rounded-lg bg-gray-50">
           <img
-            src={`http://localhost:5000/images/${student.vanBangImage}`}
+            src={`/images/${student.vanBangImage}`}
             alt="Văn bằng gốc"
             className="w-full max-w-full mx-auto object-contain"
             style={{ maxHeight: '70vh' }}
