@@ -173,8 +173,8 @@ function StudentPortal() {
     const file = e.target.files[0];
     setFileError('');
     if (file) {
-      if (file.size > 2 * 1024 * 1024) {
-        setFileError('Ảnh quá lớn (tối đa 2MB).');
+      if (file.size > 10 * 1024 * 1024) {
+        setFileError('Ảnh quá lớn (tối đa 10MB).');
         return;
       }
       setFormData(prev => ({ ...prev, vanBangFile: file }));
@@ -614,7 +614,7 @@ function StudentPortal() {
                         <div className="text-center">
                           <Upload className="w-12 h-12 text-gray-400 mx-auto mb-3" />
                           <p className="text-sm text-gray-600 mb-2">Nhấn để chọn ảnh hoặc kéo thả file vào đây</p>
-                          <p className="text-xs text-gray-500">JPG, PNG (tối đa 2MB)</p>
+                          <p className="text-xs text-gray-500">JPG, PNG (tối đa 10MB)</p>
                           <input
                             type="file"
                             name="vanBangFile"
